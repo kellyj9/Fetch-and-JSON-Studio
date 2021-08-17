@@ -2,7 +2,7 @@ window.addEventListener("load", function () {
     fetch("https://handlers.education.launchcode.org/static/astronauts.json").then( function(response) {
         response.json().then( function(json) { 
             json.sort(function(a, b) {
-                return Number(b.hoursInSpace) - Number(a.hoursInSpace);
+                return b.hoursInSpace - a.hoursInSpace;
             });
             const div = document.getElementById("container");
             for (let i = 0; i < json.length; i++) {
